@@ -1,0 +1,50 @@
+[tool.poetry]
+authors = ["Riccardo Albertazzi <ra@bendingspoons.com>"]
+description = "A Poetry plugin to manage private repos in an opinionated way."
+name = "poetry-private-repo-plugin"
+packages = [{ include = "poetry_private_repo_plugin" }]
+readme = "README.md"
+version = "1.0.0"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+poetry = "^1.4.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+isort = "^5.12.0"
+mypy = "^1.0.1"
+ruff = "^0.0.253"
+
+[tool.poetry.plugins."poetry.application.plugin"]
+poetry-private-repo-plugin = "poetry_private_repo_plugin.plugin:PoetryPrivateRepoPlugin"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.black]
+exclude = '''
+(
+    \.DS_Store |
+    \.githooks |
+    \.html$ |
+    \.idea |
+    \.json$ |
+    \.pyc$ |
+    \.sql$ |
+    \.vscode |
+    \.venv |
+    node_modules |
+    retina
+)
+'''
+line-length = 100
+
+[tool.isort]
+line_length = 100
+profile = "black"
+
+[tool.ruff]
+ignore = ["E501"]
