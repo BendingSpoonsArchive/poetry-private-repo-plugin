@@ -1,3 +1,5 @@
+from typing import List
+
 from poetry.console.application import Application
 from poetry.core.packages.dependency import Dependency
 from poetry.core.packages.package import Package
@@ -6,7 +8,7 @@ from poetry.repositories.repository_pool import RepositoryPool
 
 
 class CustomRepositoryPool(RepositoryPool):
-    def find_packages(self, dependency: Dependency) -> list[Package]:
+    def find_packages(self, dependency: Dependency) -> List[Package]:
         """
         Override the behaviour of Poetry, in particular this line:
         https://github.com/python-poetry/poetry/blob/bbb0d89f0e90babfb48d6f37318670d3a9fbb005/src/poetry/repositories/repository_pool.py#L136
