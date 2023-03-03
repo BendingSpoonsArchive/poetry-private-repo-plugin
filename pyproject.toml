@@ -4,7 +4,7 @@ description = "A Poetry plugin to manage private repos in an opinionated way."
 name = "poetry-private-repo-plugin"
 packages = [{ include = "poetry_private_repo_plugin" }]
 readme = "README.md"
-version = "1.1.0"
+version = "1.1.1"
 
 [tool.poetry.dependencies]
 python = "^3.8"

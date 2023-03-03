@@ -4,7 +4,7 @@ This plugin injects an opinionated way of managing custom `secondary` repositori
 
 Until the plugin is published on PyPI, you can install it as:
 ```bash
-poetry self add git+https://github.com/BendingSpoons/poetry-private-repo-plugin.git#1.1.0
+poetry self add git+https://github.com/BendingSpoons/poetry-private-repo-plugin.git#1.1.1
 ```
 
 ## What do we want to solve

@@ -50,11 +50,16 @@ class CustomRepositoryPool(RepositoryPool):
 
 
 class PoetryPrivateRepoPlugin(ApplicationPlugin):
-    def activate(self, application: Application):
+    def activate(self, application: Application) -> None:
         assert application.event_dispatcher is not None
         assert application._io is not None
 
-        config = PluginConfig(application.poetry.pyproject)
+        try:
+            config = PluginConfig(application.poetry.pyproject)
+        except RuntimeError:
+            # A pyproject.toml file does not exist. This may happen on poetry init
+            return
+
         official_pool = application.poetry.pool
         plugin_pool = CustomRepositoryPool(config.enfore_source)
         plugin_pool._repositories = official_pool._repositories
