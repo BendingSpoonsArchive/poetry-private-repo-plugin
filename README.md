@@ -1,4 +1,6 @@
-# poetry-private-repo-plugin
+⚠️ **As of Poetry 1.5.0, this plugin is now useless and will not be maintained anymore. You can in fact achieve the same functionality by configuring your repository with `priority = "explicit"`. If you previously installed this plugin, you can uninstall it through `poetry self remove poetry-private-repo-plugin`. The repository will be closed on July 1, 2023**
+
+# poetry-private-repo-plugin (Poetry < 1.5)
 
 This plugin injects an opinionated way of managing custom `secondary` repositories until a better alternative is officially developed within Poetry (see https://github.com/python-poetry/poetry/issues/6713).
 
